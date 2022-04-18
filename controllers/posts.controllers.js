@@ -25,13 +25,11 @@ export async function getPostsPage(req, res) {
 
   res.render('posts', { title: title, user: req.user, posts: postsData.data });
 }
-
 export function getCreatePostPage(req, res) {
   if (!req.user) return res.status(401).redirect('/');
 
   res.render('posts-create', { title: 'Новая запись', user: req.user });
 }
-
 export async function getUpdatePostPage(req, res) {
   if (!req.user) return res.status(401).redirect('/');
 
@@ -46,7 +44,6 @@ export async function getUpdatePostPage(req, res) {
 
   res.render('posts-update', { title: 'Редактирование записи', user: req.user, post: postData.data });
 }
-
 export async function getPostPage(req, res) {
   var postData;
   var shortPostTitle;
@@ -84,7 +81,6 @@ export async function createPost(req, res) {
 
   res.sendStatus(204);
 }
-
 export async function getPost(req, res) {
   var postData = await Post.findByPk(req.params.id, {
     include: [{
@@ -116,7 +112,6 @@ export async function getPost(req, res) {
 
   res.status(200).json(post);
 }
-
 export async function getPosts(req, res) {
   var postsData = await Post.findAll({
     include: {
@@ -139,7 +134,6 @@ export async function getPosts(req, res) {
 
   res.status(200).json(posts);
 }
-
 export async function getUserPosts(req, res) {
   var postsData = await Post.findAll({
     where: { author_id: req.params.id },
@@ -163,7 +157,6 @@ export async function getUserPosts(req, res) {
 
   res.status(200).json(posts);
 }
-
 export async function updatePost(req, res) {
   var postData = await Post.findByPk(req.params.id);
 
@@ -221,7 +214,6 @@ export async function updatePost(req, res) {
 
   res.sendStatus(204);
 }
-
 export async function deletePost(req, res) {
   var postData = await Post.findByPk(req.params.id, {
     include: [{

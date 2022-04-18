@@ -134,13 +134,11 @@ router.get('/login', checkAuthenticated, (req, res) => {
 
   res.render('login', { title: 'Вход' });
 });
-
 router.get('/register', checkAuthenticated, (req, res) => {
   if (req.user) return res.redirect('/');
 
   res.render('register', { title: 'Регистрация' });
 });
-
 router.get('/logout', checkAuthenticated, logOut);
 
 // API

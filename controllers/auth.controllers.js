@@ -32,7 +32,6 @@ export function logIn(req, res, next) {
     }
   )(req, res, next);
 }
-
 export async function register(req, res) {
   try {
     const user = await User.create({ username: req.body.username, password: req.body.password });
@@ -46,7 +45,6 @@ export async function register(req, res) {
 
   res.sendStatus(204);
 }
-
 export function logOut(req, res) {
   res.clearCookie('secret_token', { path: '/' }).redirect('/');
 }
