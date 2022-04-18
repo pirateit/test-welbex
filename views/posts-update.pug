@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  include header
+  // Main Content
+  main.mb-4
+    .container.px-4.px-lg-5
+      .row.gx-4.gx-lg-5.justify-content-center
+        .col-md-10.col-lg-8.col-xl-7
+          .my-5
+            form#update-post-form
+              input(type="hidden", id="id", value=post.id)
+              .form-floating
+                input#title.form-control(type='text', name="title", placeholder='Введите заголовок...', value=post.title, required)
+                label(for='title') Заголовок *
+              .form-floating
+                textarea#content.form-control(name="content", placeholder='Введите текст...', style='height: 12rem', required)
+                  | #{post.content}
+                label(for='content') Текст *
+              .form-floating
+                .form-text Медиафайлы (Не более 10 файлов, форматы: PNG, JPG, JPEG, MP4, максимальный размер: 10МБ)
+              #attachments.form-range
+                each att in post.attachments
+                  - var attIndex = post.attachments.indexOf(att)
+                  div
+                    input(type="hidden", name="attachments", value=att.id)
+                    | #{att.filetype.toUpperCase()} #{att.filepath}
+                    button.btn.btn-link.delete-attachment X
+              .form-range
+                //- .text-end
+                //-   button#delete-attachment.btn.btn-link Удалить файл &#8593;
+                .text-end
+                  button#add-attachment.btn.btn-secondary +
+              br
+              #submitErrorMessage.d-none
+                .text-center.text-danger.mb-3 Error sending message!
+            .d-flex.justify-content-between
+              button#submitButton.btn.btn-primary.text-uppercase(type='submit', form='update-post-form') Сохранить
+              form#delete-post-form
+                button#delete.btn.btn-outline-danger(form='delete-post-form') Удалить запись

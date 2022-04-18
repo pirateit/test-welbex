@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  include header
+  // Post Content
+  article.mb-4
+    .container.px-4.px-lg-5
+      .row.gx-4.gx-lg-5.justify-content-center
+        .col-md-10.col-lg-8.col-xl-7
+          p
+            | #{post.content}
+          unless !post.attachments.length
+            h2.section-heading Прикреплённые файлы
+            each attachment in post.attachments
+              p
+                | #{attachment.filetype.toUpperCase()} #{attachment.filepath}

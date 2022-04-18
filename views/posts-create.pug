@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  include header
+  // Main Content
+  main.mb-4
+    .container.px-4.px-lg-5
+      .row.gx-4.gx-lg-5.justify-content-center
+        .col-md-10.col-lg-8.col-xl-7
+          .my-5
+            form#create-post-form
+              .form-floating
+                input#title.form-control(type='text', name="title", placeholder='Введите заголовок...', required)
+                label(for='title') Заголовок *
+              .form-floating
+                textarea#content.form-control(name="content", placeholder='Введите текст...' style='height: 12rem', required)
+                label(for='content') Текст *
+              .form-floating
+                .form-text Медиафайлы (Максимум 10 файлов, форматы: PNG, JPG, JPEG, MP4, максимальный размер: 10МБ)
+              .form-range
+                .text-end
+                  button#delete-attachment.btn.btn-link Удалить файл &#8593;
+                .text-end
+                  button#add-attachment.btn.btn-secondary +
+              br
+              #submitErrorMessage.d-none
+                .text-center.text-danger.mb-3 Error sending message!
+              button#submitButton.btn.btn-primary.text-uppercase(type='submit') Отправить
