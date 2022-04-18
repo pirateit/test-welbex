@@ -38,19 +38,20 @@
 
 ### Нужно использовать
 
-*  Должна использоваться реляционная база данных
-*  Express js/nest js/fastify
+* Должна использоваться реляционная база данных
+* Express js/nest js/fastify
 * ОРМ (type ORM, sequelize или другая на выш выбор)
 
 ### Будет плюсом
 
-*  Typescript
+* Typescript
 * Docker
 
 ### Можно использовать
 
-*  Typescript
-* Docker
+* Swagger
+* Библиотеки для jwt авторизации
+* Css фреймворки
 
 ### Нельзя использовать
 

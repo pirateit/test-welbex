@@ -45,7 +45,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:3000/api',
+        url: 'http://test-welbex.pirateit.org/api',
       },
     ],
   },
