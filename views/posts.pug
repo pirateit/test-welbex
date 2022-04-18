@@ -21,7 +21,7 @@ block content
               a(href=`/users/${post.author.id}/posts`) #{post.author.username}
               | , #{new Date(post.createdAt).toLocaleDateString()}
             if user
-              unless !(user.id === post.author_id)
+              unless !(user.id === post.author.id)
                 .d-flex.justify-content-end
                   a(href=`/posts/${post.id}/edit`).btn.btn-outline-secondary Редактировать
         // Divider

@@ -146,7 +146,7 @@ export async function getUserPosts(req, res) {
     include: {
       model: User,
       as: 'author',
-      attributes: ['username']
+      attributes: ['id', 'username']
     },
     order: [['id', 'DESC']]
   });
