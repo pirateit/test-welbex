@@ -61,6 +61,7 @@
 ## Итоги выполнения
 
 Ссылка на Demo: <a href="http://test-welbex.pirateit.org">test-welbex.pirateit.org</a>
+<br />
 Ссылка на API-документацию: <a href="http://test-welbex.pirateit.org/api-docs">test-welbex.pirateit.org/api-docs</a>
 
 Использовано:
