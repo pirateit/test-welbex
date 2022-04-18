@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'http://test-welbex.pirateit.org',
   // headers: {
   //   'Authorization': 'Bearer ' + validToken()
   // }
